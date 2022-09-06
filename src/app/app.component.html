@@ -13,5 +13,7 @@
 
 <div *ngIf="selection">
   your city is: {{ selection }}
-  <button (click)="onClear()">Limpiar</button>
+  <!-- Se envian argumentos hacía componentes button -->
+  <!--<button (click)="onClear()">Limpiar</button> -->
+  <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear your selection'"></app-button>
 </div>
