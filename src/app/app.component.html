@@ -1,5 +1,9 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
+      <!-- escuchamos el evento newItemEvent y enviamos el argumento recibido hacía el evento addNewCity -->
+      <app-form-new-item (newItemEvent)="addNewCity($event)" [label]="'City'" [className]="'btn-info'"></app-form-new-item>
+    </div>
     <div class="col-md-8">
       <!--
         <p *ngIf="name">El nombre es: {{ name }}</p>
