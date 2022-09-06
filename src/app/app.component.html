@@ -5,16 +5,8 @@
       <app-form-new-item (newItemEvent)="addNewCity($event)" [label]="'City'" [className]="'btn-info'"></app-form-new-item>
     </div>
     <div class="col-md-8">
-      <!--
-        <p *ngIf="name">El nombre es: {{ name }}</p>
-        <input type="text" [(ngModel)]="name">
-      -->
-
-      <ul *ngFor="let city of cities">
-        <li (click)="onCityClicked(city)" [ngClass]="{ 'alert alert-info': city === selection }">{{ city }}</li>
-        <!--<li [ngClass]="{ 'color': 'white', 'background-color': city === 'madrid' ? 'blue' : 'green' }">{{ city }}</li>-->
-        <!--<li [ngStyle]="{ 'color': 'white', 'background-color': city === 'madrid' ? 'blue' : 'green' }">{{ city }}</li>-->
-        <!--<li [ngClass]="{ 'selected': city === 'Colombia','blue': city !== 'Lima' }">{{ city }}</li>-->
+      <ul>
+        <app-cities *ngFor="let city of cities" (cityClickedEvent)="onCityClicked($event)" [city]="city" [selection]="selection"></app-cities>
       </ul>
     </div>
     <div class="col-md-4">
