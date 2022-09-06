@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AppRoutingModule } from './app.routing.module';
     FilterPipe,
     ContactComponent,
     ContactReactiveComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
