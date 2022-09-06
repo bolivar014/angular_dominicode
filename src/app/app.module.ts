@@ -14,6 +14,7 @@ import { ContactReactiveComponent } from './contact-reactive/contact-reactive.co
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ContactComponent,
     ContactReactiveComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
