@@ -13,7 +13,13 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Envio de queryParams
   goToReactive(): void {
     this.router.navigate(['contact-reactive'], {queryParams: {name: 'Bolivar014'}});
+  }
+
+  // 
+  goToTemplate(): void {
+    this.router.navigate(['contact-template', '580']);
   }
 }
