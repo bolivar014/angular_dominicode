@@ -7,12 +7,16 @@ import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from './button/button.component';
 import { FormNewItemComponent } from './form-new-item/form-new-item.component';
 import { CitiesComponent } from './cities/cities.component';
+// Importamos pipe
+import { FilterPipe } from './pipes/filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
     FormNewItemComponent,
-    CitiesComponent
+    CitiesComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
