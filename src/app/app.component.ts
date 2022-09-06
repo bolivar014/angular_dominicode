@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'Día 5 del reto';
   url = 'https://d.wattpad.com/story_parts/2/images/15948b36ef404a19901251797207.jpg';
   selection?: string;
+  criteria = '';
   cities = ['Colombia', 'Barcelona', 'Perú', 'Ecuador'];
 
   // Metodo para agregar nuevas ciudades al array cities

@@ -1,9 +1,12 @@
-import { Component, Input, OnInit, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, OnDestroy, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  template: `<button [ngStyle]="{ 'background-color': color }">{{ label }}</button>`,
-  styleUrls: ['./button.component.scss']
+  template: `
+  <button [ngStyle]="{ 'background-color': color }">{{ label }}</button>
+  `,
+  styleUrls: ['./button.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent implements OnChanges, OnInit, OnDestroy {
   // Recibimos componentes hijos
@@ -26,5 +29,11 @@ export class ButtonComponent implements OnChanges, OnInit, OnDestroy {
   // 
   ngOnDestroy(): void {
     console.log('onDestroy');
+  }
+
+  counterRender(): boolean {
+    console.log('render form Button...');
+
+    return true;
   }
 }
