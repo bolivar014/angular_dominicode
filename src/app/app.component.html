@@ -1,23 +1,23 @@
-<!--{{ title }}
-<img src="{{ url }}" alt="">-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <!--
+        <p *ngIf="name">El nombre es: {{ name }}</p>
+        <input type="text" [(ngModel)]="name">
+      -->
 
-<p *ngIf="name">El nombre es: {{ name }}</p>
-<input type="text" [(ngModel)]="name">
-
-<ul *ngFor="let city of cities">
-  <li (click)="onCityClicked(city)" [ngClass]="{ 'selected': city === selection }">{{ city }}</li>
-  <!--<li [ngClass]="{ 'color': 'white', 'background-color': city === 'madrid' ? 'blue' : 'green' }">{{ city }}</li>-->
-  <!--<li [ngStyle]="{ 'color': 'white', 'background-color': city === 'madrid' ? 'blue' : 'green' }">{{ city }}</li>-->
-  <!--<li [ngClass]="{ 'selected': city === 'Colombia','blue': city !== 'Lima' }">{{ city }}</li>-->
-</ul>
-
-<div *ngIf="selection">
-  your city is: {{ selection }}
-  <!-- Se envian argumentos hacía componentes button -->
-  <!--<button (click)="onClear()">Limpiar</button> -->
-  <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear your selection'" [selection]="selection"></app-button>
-  <!--
-  <app-button (click)="onClear()" [color]="'green'" [label]="'Bolivar014'"></app-button>
-  <app-button (click)="onClear()" [color]="'red'" [label]="'Hello world'"></app-button>
-  -->
+      <ul *ngFor="let city of cities">
+        <li (click)="onCityClicked(city)" [ngClass]="{ 'alert alert-info': city === selection }">{{ city }}</li>
+        <!--<li [ngClass]="{ 'color': 'white', 'background-color': city === 'madrid' ? 'blue' : 'green' }">{{ city }}</li>-->
+        <!--<li [ngStyle]="{ 'color': 'white', 'background-color': city === 'madrid' ? 'blue' : 'green' }">{{ city }}</li>-->
+        <!--<li [ngClass]="{ 'selected': city === 'Colombia','blue': city !== 'Lima' }">{{ city }}</li>-->
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <div *ngIf="selection">
+        your city is: {{ selection }}
+        <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear your selection'" [selection]="selection"></app-button>
+      </div>
+    </div>
+  </div>
 </div>
