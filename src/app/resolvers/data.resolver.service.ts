@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable, of } from 'rxjs';
 
-const departaments = ['Marketing', 'Sales', 'Others'];
+const departaments = ['Marketing', 'Sales', 'Others', 'HR'];
 
 @Injectable({
     providedIn: 'root'
