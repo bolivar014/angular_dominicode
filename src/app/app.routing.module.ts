@@ -9,10 +9,15 @@ import { UserComponent } from './users/user/user.component';
 import { ListComponent } from './users/list/list.component';
 import { DetailsComponent } from './users/details/details.component';
 import { PermissionsGuard } from './guards/permissions.guard';
+import { WithoutSaveGuard } from './guards/without-save.guard';
 
 const routes: Routes = [
     { path:'', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'contact-reactive', component: ContactReactiveComponent },
+    { 
+        path: 'contact-reactive',
+        component: ContactReactiveComponent,
+        canDeactivate: [WithoutSaveGuard] 
+    },
     { path: 'contact-template/:id', component: ContactComponent },
     { path: 'home', component: HomeComponent },
     {   // CanActivate - simula que debe estar autenticado

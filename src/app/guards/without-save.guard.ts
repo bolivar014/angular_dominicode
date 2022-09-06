@@ -11,7 +11,15 @@ export class WithoutSaveGuard implements CanDeactivate<unknown> {
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+    // return true;
+    if(this.hasUser()) {
+      return true;
+    }
+
+    return confirm('You have unsaved changes...');
   }
   
+  hasUser(): boolean {
+    return false;
+  }
 }
