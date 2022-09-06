@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 // Creamos interface
 interface ContactoForm {
@@ -28,7 +29,7 @@ export class ContactComponent implements OnInit {
 
 
   // Evento submit
-  onSubmit(values: any): void {
-    console.log('Form values', values);
+  onSubmit(form: NgForm): void {
+    console.log('Form values', form);
   }
 }
