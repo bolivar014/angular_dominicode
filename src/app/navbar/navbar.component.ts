@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly router: Router) { }
 
   ngOnInit(): void {
   }
 
+  // Envio de queryParams
+  goToReactive(): void {
+    this.router.navigate(['contact-reactive'], {queryParams: {name: 'Bolivar014'}});
+  }
+
+  // 
+  goToTemplate(): void {
+    this.router.navigate(['contact-template', '580']);
+  }
 }
