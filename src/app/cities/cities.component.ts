@@ -3,9 +3,8 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 @Component({
   selector: 'app-cities',
   template: `<ul>
-                <li (click)="onCityClicked(city)" [ngClass]="{ 'alert alert-info': city === selection }">{{ city }}</li>
+                <li (click)="onCityClicked(city)" [ngClass]="{ 'alert alert-info': city === selection }">{{ city | titlecase }}</li>
             </ul>
-            <p>Counter: {{ counterRender() }} </p>
             `,
   styleUrls: ['./cities.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush

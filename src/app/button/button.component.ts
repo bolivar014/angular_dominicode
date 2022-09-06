@@ -4,8 +4,6 @@ import { Component, Input, OnInit, OnChanges, OnDestroy, SimpleChanges, ChangeDe
   selector: 'app-button',
   template: `
   <button [ngStyle]="{ 'background-color': color }">{{ label }}</button>
-  
-  {{ counterRender() }}
   `,
   styleUrls: ['./button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

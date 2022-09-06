@@ -10,6 +10,12 @@
       </ul>
     </div>
 
+    <p> {{ '06/15/15, 09:03 AM' | date:'full' }} </p>
+    <p>My BirthDay is: {{ '06/15/15, 09:03 AM' | date:'short' }} </p>
+    <p> {{ '999' | currency }} </p>
+    <p> {{ '999' | currency: 'EUR' }} </p>
+    <p> {{ '999' | currency: 'COP' }} </p>
+
     <div class="col-md-4">
       <div *ngIf="selection">
         your city is: {{ selection }}
