@@ -8,14 +8,26 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UserComponent } from './users/user/user.component';
 import { ListComponent } from './users/list/list.component';
 import { DetailsComponent } from './users/details/details.component';
+import { PermissionsGuard } from './guards/permissions.guard';
+import { WithoutSaveGuard } from './guards/without-save.guard';
+import { DataResolverService } from './resolvers/data.resolver.service';
 
 const routes: Routes = [
     { path:'', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'contact-reactive', component: ContactReactiveComponent },
-    { path: 'contact-template/:id', component: ContactComponent },
-    { path: 'home', component: HomeComponent },
     { 
-        path: 'users', component: UserComponent, 
+        path: 'contact-reactive',
+        component: ContactReactiveComponent,
+        canDeactivate: [WithoutSaveGuard],
+        resolve: { departaments: DataResolverService } 
+    },
+    { 
+        path: 'contact-template/:id', 
+        component: ContactComponent,
+        resolve: { departaments: DataResolverService } 
+    },
+    { path: 'home', component: HomeComponent },
+    {   // CanActivate - simula que debe estar autenticado
+        path: 'users', component: UserComponent, canActivate: [PermissionsGuard],
         children: [
             { path: 'list', component: ListComponent },
             { path: 'details', component: DetailsComponent },
