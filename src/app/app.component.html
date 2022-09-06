@@ -9,6 +9,7 @@
         <app-cities *ngFor="let city of cities" (cityClickedEvent)="onCityClicked($event)" [city]="city" [selection]="selection"></app-cities>
       </ul>
     </div>
+
     <div class="col-md-4">
       <div *ngIf="selection">
         your city is: {{ selection }}
