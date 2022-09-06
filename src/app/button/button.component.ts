@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  template: `<button>{{ label }}</button>`,
-  styleUrls: ['./button.component.css']
+  template: `<button [ngStyle]="{ 'background-color': color }">{{ label }}</button>`,
+  styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
   // Recibimos componentes hijos
