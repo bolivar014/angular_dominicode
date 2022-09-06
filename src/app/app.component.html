@@ -12,18 +12,31 @@
         <app-cities *ngFor="let city of (cities | filter: criteria)" (cityClickedEvent)="onCityClicked($event)" [city]="city" [selection]="selection"></app-cities>
       </ul>
     </div>
-
+    <!--
     <p> {{ '06/15/15, 09:03 AM' | date:'full' }} </p>
     <p>My BirthDay is: {{ '06/15/15, 09:03 AM' | date:'short' }} </p>
     <p> {{ '999' | currency }} </p>
     <p> {{ '999' | currency: 'EUR' }} </p>
     <p> {{ '999' | currency: 'COP' }} </p>
-
+    -->
     <div class="col-md-4">
       <div *ngIf="selection">
         your city is: {{ selection }}
         <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear your selection'" [selection]="selection"></app-button>
       </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <app-contact></app-contact>
+    </div>
+    <div class="col-md-3">
+      Data
     </div>
   </div>
 </div>
