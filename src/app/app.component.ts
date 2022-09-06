@@ -10,6 +10,8 @@ export class AppComponent implements OnChanges, OnInit, OnDestroy {
   title = 'Día 5 del reto';
   url = 'https://d.wattpad.com/story_parts/2/images/15948b36ef404a19901251797207.jpg';
 
+  selection?: string;
+
   //
   cities = ['Colombia', 'Barcelona', 'Perú', 'Ecuador'];
 
@@ -27,6 +29,16 @@ export class AppComponent implements OnChanges, OnInit, OnDestroy {
   // Se ejecuta cuando se destruye el componente...
   ngOnDestroy(): void {
     console.log('Destroy... -> ');
+  }
 
+  // Evento para determinar los click en la lista tipo UL
+  onCityClicked(city: string): void {
+    console.log(city);
+    this.selection = city;
+  }
+
+  // Evento para limpiar la lista
+  onClear(): void {
+    this.selection = '';
   }
 }
