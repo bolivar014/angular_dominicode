@@ -5,5 +5,5 @@
 <input type="text" [(ngModel)]="name">
 
 <ul *ngFor="let city of cities">
-  <li>{{ city }}</li>
+  <li [ngClass]="{ 'selected': city === 'Colombia','blue': city !== 'Lima' }">{{ city }}</li>
 </ul>
