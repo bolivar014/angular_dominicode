@@ -19,7 +19,7 @@ export class HomeComponent {
   }
 
   // Evento para determinar los click en la lista tipo UL
-  onCityClicked(city: string): void {
+  onCitySelected(city: string): void {
     console.log(city);
     this.selection = city;
   }
@@ -29,4 +29,8 @@ export class HomeComponent {
     this.selection = '';
   }
 
+  // Evento para eliminación de id
+  onCityDelete(id: string): void {
+    console.log('el id a eliminar, es: ', id);
+  }
 }

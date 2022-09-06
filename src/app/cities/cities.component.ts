@@ -3,7 +3,10 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 @Component({
   selector: 'app-cities',
   template: `<ul class="list-group">
-                <li class="list-group-item mt-1" (click)="onCityClicked(city)" [ngClass]="{ 'active': city === selection }">{{ city | titlecase }}</li>
+                <li class="list-group-item mt-1" (click)="onCitySelected(city)" [ngClass]="{ 'active': city === selection }">
+                  {{ city | titlecase }}
+                  <button type="button" class="btn btn-danger float-end" (click)="onCityDelete('1')">Delete</button>
+                </li>
             </ul>
             `,
   styleUrls: ['./cities.component.css'],
@@ -12,16 +15,22 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 export class CitiesComponent {
   @Input() city!: string;
   @Input() selection?: string;
-  @Output() cityClickedEvent = new EventEmitter<string>();
+  @Output() citySelectedEvent = new EventEmitter<string>();
+  @Output() cityDeleteEvent = new EventEmitter<string>();
 
-  onCityClicked(city: string): void {
+  onCitySelected(city: string): void {
     //
-    this.cityClickedEvent.emit(city);
+    this.citySelectedEvent.emit(city);
   }
 
   counterRender(): boolean {
     console.log('render cities...');
 
     return true;
+  }
+
+  // Evento para eliminar ciudades
+  onCityDelete(id: string): void {
+    this.cityDeleteEvent.emit(id);
   }
 }

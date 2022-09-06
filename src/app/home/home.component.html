@@ -8,7 +8,11 @@
         <input type="text" class="form-control" placeholder="Filter..." [(ngModel)]="criteria">
       </div>
       <div class="col-md-8">
-        <app-cities *ngFor="let city of (cities | filter: criteria)" (cityClickedEvent)="onCityClicked($event)" [city]="city" [selection]="selection"></app-cities>
+        <app-cities *ngFor="let city of (cities | filter: criteria)"
+          (citySelectedEvent)="onCitySelected($event)"
+          (cityDeleteEvent)="onCityDelete($event)"
+          [city]="city"
+          [selection]="selection"></app-cities>
       </div>
       <div class="col-md-4">
         <div *ngIf="selection">
