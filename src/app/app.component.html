@@ -15,5 +15,9 @@
   your city is: {{ selection }}
   <!-- Se envian argumentos hacía componentes button -->
   <!--<button (click)="onClear()">Limpiar</button> -->
-  <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear your selection'"></app-button>
+  <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear your selection'" [selection]="selection"></app-button>
+  <!--
+  <app-button (click)="onClear()" [color]="'green'" [label]="'Bolivar014'"></app-button>
+  <app-button (click)="onClear()" [color]="'red'" [label]="'Hello world'"></app-button>
+  -->
 </div>
