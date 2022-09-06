@@ -10,7 +10,6 @@ import { CitiesComponent } from './cities/cities.component';
 // Importamos pipe
 import { FilterPipe } from './pipes/filter.pipe';
 import { ContactComponent } from './contact/contact.component';
-import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -27,7 +26,6 @@ import { ListComponent } from './users/list/list.component';
     CitiesComponent,
     FilterPipe,
     ContactComponent,
-    ContactReactiveComponent,
     HomeComponent,
     NavbarComponent,
     PagenotfoundComponent,
