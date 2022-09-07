@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   cities: City[] = [];
 
   constructor(private readonly dataSvc: DataService) {}
+
   ngOnInit(): void {
     // Obtenemos el get de ciudades y los enviamos al array cities
     this.dataSvc.getCities()
@@ -23,11 +24,11 @@ export class HomeComponent implements OnInit {
   }
 
   // Metodo para agregar nuevas ciudades al array cities
-  addNewCity(city: City): void {
+  addNewCity(city: string): void {
     // this.cities.push(city);
     this.dataSvc.addNewCity(city).subscribe(resp => {
       this.cities.push(resp);
-    })
+    });
   }
 
   // Evento para determinar los click en la lista tipo UL
