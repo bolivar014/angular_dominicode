@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, OnChanges, OnDestroy, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
+import { City } from '../services/data.service';
 
 @Component({
   selector: 'app-button',
@@ -12,21 +13,21 @@ export class ButtonComponent implements OnChanges, OnInit, OnDestroy {
   // Recibimos componentes hijos
   @Input() color?: string;
   @Input() label?: string;
-  @Input() selection?: string;
-  
+  @Input() selection?: City;
+
   constructor() { }
-  
-  // 
+
+  //
   ngOnChanges(changes: SimpleChanges): void {
     console.log('changes ->', changes)
   }
 
-  // 
+  //
   ngOnInit(): void {
     console.log('ngOnInit');
   }
 
-  // 
+  //
   ngOnDestroy(): void {
     console.log('onDestroy');
   }

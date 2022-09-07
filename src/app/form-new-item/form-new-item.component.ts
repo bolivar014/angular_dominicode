@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { City } from '../services/data.service';
 
 @Component({
   selector: 'app-form-new-item',
@@ -7,21 +8,15 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormNewItemComponent {
-  @Input() label?: string;
+  @Input() label!: string;
   @Input() className = 'btn-primary';
+  @Input() selection!: City;
 
   // Output de salida para enviar argumentos al Parent
   @Output() newItemEvent = new EventEmitter<string>();
 
   onAddNewItem(item: string): void {
-    console.log('item -> ', item);
     // Enviamos argumento por medio de función emit hacía el componente padre app.component
     this.newItemEvent.emit(item);
-  }
-
-  counterRender(): boolean {
-    console.log('render form...');
-
-    return true;
   }
 }
